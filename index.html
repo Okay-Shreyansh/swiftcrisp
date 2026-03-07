@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwiftCrisp India – Affordable Websites for Small Businesses</title>
+  <meta name="description" content="Get a fast, mobile-ready website for your gym, salon, or coaching center. Starting at ₹3,999. Built by a dedicated developer who understands local businesses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'DM Sans', sans-serif; background: #080c14; color: #e8eaf0; line-height: 1.7; overflow-x: hidden; }
+    :root {
+      --accent: #4f8ef7; --accent-glow: rgba(79,142,247,0.18); --accent-dark: #2563eb;
+      --surface: #0f1422; --surface2: #141928; --border: rgba(255,255,255,0.07);
+      --text-muted: #8892a4; --text: #e8eaf0; --heading: #ffffff;
+      --radius: 12px; --max-w: 1120px; --section-pad: 96px 24px;
+    }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); background: var(--accent-glow); border: 1px solid rgba(79,142,247,0.25); padding: 5px 14px; border-radius: 100px; margin-bottom: 18px; }
+    h1,h2,h3,h4 { font-family: 'Syne', sans-serif; color: var(--heading); line-height: 1.15; }
+    h2.section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 14px; }
+    p.section-sub { font-size: 1.05rem; color: var(--text-muted); max-width: 520px; margin-bottom: 56px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 14px 28px; border-radius: var(--radius); text-decoration: none; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; border: none; cursor: pointer; }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(79,142,247,0.3); }
+    .btn-wa { display: inline-flex; align-items: center; gap: 9px; background: transparent; color: #25d366; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.95rem; padding: 13px 26px; border-radius: var(--radius); border: 1.5px solid #25d366; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn-wa:hover { background: rgba(37,211,102,0.1); transform: translateY(-2px); }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 68px; background: rgba(8,12,20,0.88); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s; }
+    nav.scrolled { box-shadow: 0 4px 32px rgba(0,0,0,0.4); }
+    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--heading); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { display: flex; align-items: center; }
+    .nav-cta .btn-primary { padding: 10px 20px; font-size: 0.88rem; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 999; background: #0a0e1a; border-bottom: 1px solid var(--border); padding: 24px 32px 32px; flex-direction: column; gap: 8px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--text); text-decoration: none; font-size: 1.05rem; font-weight: 500; padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .mobile-menu a:last-of-type { border-bottom: none; }
+    .mobile-menu .btn-primary { margin-top: 14px; justify-content: center; }
+
+    /* HERO */
+    #hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 24px 80px; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 70% 50% at 60% 40%, rgba(79,142,247,0.09) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 80% 70%, rgba(99,102,241,0.06) 0%, transparent 60%); }
+    .hero-grid { position: absolute; inset: 0; z-index: 0; opacity: 0.04; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 48px 48px; }
+    .hero-inner { position: relative; z-index: 1; max-width: 700px; }
+    .hero-inner h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 800; line-height: 1.08; margin-bottom: 22px; letter-spacing: -0.03em; }
+    .hero-inner h1 .hl { color: var(--accent); }
+    .hero-inner p { font-size: clamp(1rem, 2vw, 1.18rem); color: var(--text-muted); max-width: 520px; margin-bottom: 38px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-stats { display: flex; gap: 36px; margin-top: 64px; flex-wrap: wrap; }
+    .stat-num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--heading); }
+    .stat-num span { color: var(--accent); }
+    .stat-lbl { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* SERVICES */
+    #services { padding: var(--section-pad); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .svc-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 28px; transition: border-color 0.2s, transform 0.2s; position: relative; overflow: hidden; }
+    .svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0; transition: opacity 0.3s; }
+    .svc-card:hover { border-color: rgba(79,142,247,0.3); transform: translateY(-4px); }
+    .svc-card:hover::before { opacity: 1; }
+    .svc-icon { width: 44px; height: 44px; background: var(--accent-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--accent); }
+    .svc-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    .svc-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* WHY */
+    #why { padding: var(--section-pad); background: var(--surface); }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
+    .why-card { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; }
+    .why-n { font-family: 'Syne', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--accent); opacity: 0.25; line-height: 1; margin-bottom: 12px; }
+    .why-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .why-card p { font-size: 0.88rem; color: var(--text-muted); }
+
+    /* PORTFOLIO */
+    #portfolio { padding: var(--section-pad); }
+    .port-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .port-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
+    .port-card:hover { transform: translateY(-4px); border-color: rgba(79,142,247,0.3); }
+    .port-thumb { height: 180px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .port-thumb.gym { background: linear-gradient(135deg, #0f1a2e 0%, #1a2744 100%); }
+    .port-thumb.coach { background: linear-gradient(135deg, #0e1a1a 0%, #0d3030 100%); }
+    .port-thumb.salon { background: linear-gradient(135deg, #1a0e1a 0%, #2d0f33 100%); }
+    .mock-ui { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+    .mock-bar { width: 60%; height: 8px; border-radius: 4px; background: rgba(255,255,255,0.1); }
+    .mock-bar.s { width: 40%; }
+    .mock-bar.a { background: var(--accent); opacity: 0.5; }
+    .mock-lbl { position: absolute; top: 12px; left: 14px; font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); opacity: 0.8; }
+    .port-body { padding: 24px; }
+    .port-body .pt { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .port-body h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    .port-body p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px; }
+    .ptag { display: inline-block; font-size: 0.75rem; background: rgba(79,142,247,0.08); border: 1px solid rgba(79,142,247,0.18); color: var(--accent); padding: 4px 10px; border-radius: 6px; }
+
+    /* PRICING */
+    #pricing { padding: var(--section-pad); background: var(--surface); }
+    .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .price-card { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 28px; display: flex; flex-direction: column; transition: border-color 0.2s, transform 0.2s; }
+    .price-card.pop { border-color: var(--accent); position: relative; }
+    .price-card.pop::after { content: 'Most Popular'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 14px; border-radius: 100px; white-space: nowrap; font-family: 'Syne', sans-serif; }
+    .price-card:hover { transform: translateY(-4px); border-color: rgba(79,142,247,0.4); }
+    .plan-name { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+    .plan-price { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--heading); margin-bottom: 4px; }
+    .plan-price .from { font-size: 0.8rem; color: var(--text-muted); font-weight: 400; }
+    .plan-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px; }
+    .plan-feats { list-style: none; display: flex; flex-direction: column; gap: 10px; flex: 1; margin-bottom: 28px; }
+    .plan-feats li { font-size: 0.9rem; display: flex; align-items: flex-start; gap: 10px; }
+    .plan-feats li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    .price-card .btn-primary { justify-content: center; }
+
+    /* PROCESS */
+    #process { padding: var(--section-pad); }
+    .steps { display: flex; flex-direction: column; position: relative; max-width: 680px; }
+    .steps::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--accent), transparent); opacity: 0.25; }
+    .step { display: flex; gap: 28px; padding: 0 0 40px; position: relative; }
+    .step-dot { width: 42px; height: 42px; flex-shrink: 0; background: var(--surface); border: 2px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.85rem; color: var(--accent); z-index: 1; }
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .step p { font-size: 0.88rem; color: var(--text-muted); }
+
+    /* FAQ */
+    #faq { padding: var(--section-pad); background: var(--surface); }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 720px; }
+    .faq-item { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--heading); transition: background 0.2s; }
+    .faq-q:hover { background: rgba(255,255,255,0.03); }
+    .faq-icon { flex-shrink: 0; color: var(--accent); transition: transform 0.25s; font-size: 1.1rem; font-weight: 300; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 16px 24px 20px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+    .faq-item.open .faq-a { display: block; }
+
+    /* CONTACT */
+    #contact { padding: var(--section-pad); }
+    .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .contact-left h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 16px; }
+    .contact-left p { color: var(--text-muted); margin-bottom: 28px; font-size: 0.95rem; }
+    .c-opt { display: flex; align-items: center; gap: 14px; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px; }
+    .c-ico { width: 38px; height: 38px; flex-shrink: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--accent); }
+    .c-form { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 32px; }
+    .c-form h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 24px; }
+    .fg { margin-bottom: 18px; }
+    .fg label { display: block; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 7px; font-weight: 500; }
+    .fg input, .fg select, .fg textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.92rem; outline: none; transition: border-color 0.2s; }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--accent); }
+    .fg textarea { resize: vertical; min-height: 110px; }
+    .fg select option { background: #0f1422; }
+    .btn-submit { width: 100%; justify-content: center; padding: 14px; font-size: 1rem; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    .footer-logo { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--heading); margin-bottom: 10px; }
+    .footer-logo span { color: var(--accent); }
+    .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 56px; height: 56px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+
+    /* FADE-IN */
+    .fi { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fi.vis { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      :root { --section-pad: 72px 20px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn-primary, .hero-ctas .btn-wa { width: 100%; justify-content: center; }
+      .contact-wrap { grid-template-columns: 1fr; gap: 36px; }
+      .c-form { padding: 28px 20px; }
+      p.section-sub { margin-bottom: 36px; }
+    }
+    @media (max-width: 480px) {
+      nav { padding: 0 20px; }
+      .price-card.pop { margin-top: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Swift<span>Crisp</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="#contact" class="btn-primary">Get a Free Quote</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#portfolio" onclick="closeMobile()">Our Work</a>
+  <a href="#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="#process" onclick="closeMobile()">Process</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="https://wa.me/919XXXXXXXXX?text=Hi%2C%20I%20want%20a%20website" target="_blank" class="btn-wa" style="justify-content:center;margin-top:8px">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Chat on WhatsApp
+  </a>
+  <a href="#contact" class="btn-primary" onclick="closeMobile()">Get Free Quote</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <span class="tag">For Small Businesses Across India</span>
+    <h1>Your Customers Are<br/>Looking for You Online<br/><span class="hl">Right Now.</span></h1>
+    <p>Get a fast, mobile-ready website that actually brings people through your door — whether you run a gym, salon, coaching center, or any local business. No tech headaches. No hidden costs.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Get Your Website
+      </a>
+      <a href="https://wa.me/918882156164?text=Hi%2C%20I%20want%20a%20website%20for%20my%20business" target="_blank" class="btn-wa">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">15<span>+</span></div><div class="stat-lbl">Businesses helped</div></div>
+      <div><div class="stat-num">7<span>-day</span></div><div class="stat-lbl">Average delivery</div></div>
+      <div><div class="stat-num">₹3,999<span>+</span></div><div class="stat-lbl">Prices starting at</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <span class="tag">What I Build</span>
+    <h2 class="section-title">Services That<br/>Grow Your Business</h2>
+    <p class="section-sub">Every website I build has one job: to turn visitors into paying customers.</p>
+    <div class="services-grid fi">
+      <div class="svc-card">
+        <div class="svc-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Business Website</h3>
+        <p>A clean, professional site with all the essentials — who you are, what you offer, where you're located, and how to contact you. Your 24/7 online salesperson.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg></div>
+        <h3>Landing Page</h3>
+        <p>One focused page built to convert — perfect for a promotion, new batch enrollment, gym membership offer, or any campaign where you want people to take action fast.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <h3>Website Redesign</h3>
+        <p>Already have a website that looks outdated or loads slowly? I'll rebuild it from scratch — faster, modern, and designed to actually impress first-time visitors.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div>
+        <h3>E-commerce &amp; Bookings</h3>
+        <p>Let customers buy your products or book appointments online. Whether it's selling packages or slots — I'll set it up so orders come to you automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section id="why">
+  <div class="container">
+    <span class="tag">Why Work With Me</span>
+    <h2 class="section-title">You Don't Need<br/>a Big Agency.</h2>
+    <p class="section-sub">You need someone who replies fast, delivers on time, and actually cares if your website works.</p>
+    <div class="why-grid fi">
+      <div class="why-card"><div class="why-n">01</div><h3>Your site is ready in under 10 days</h3><p>No waiting weeks. I work with a clear timeline and keep you updated at every step — no ghosting, no delays without notice.</p></div>
+      <div class="why-card"><div class="why-n">02</div><h3>Priced for real businesses, not startups</h3><p>A good website shouldn't cost you a month's revenue. Honest pricing with no surprise add-ons once the project starts.</p></div>
+      <div class="why-card"><div class="why-n">03</div><h3>Looks great on every phone</h3><p>Over 80% of your customers will visit from a phone. Every site I build is designed mobile-first and tested across devices before handover.</p></div>
+      <div class="why-card"><div class="why-n">04</div><h3>One person, direct contact, always</h3><p>You talk to me directly — not a salesperson, not a project manager. If something needs fixing, you message me and it gets done.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <span class="tag">Recent Work</span>
+    <h2 class="section-title">Websites Built for<br/>Businesses Like Yours</h2>
+    <p class="section-sub">Demo projects showing what I can build for your type of business.</p>
+    <div class="port-grid fi">
+      <div class="port-card">
+        <div class="port-thumb gym">
+          <span class="mock-lbl">Gym / Fitness</span>
+          <div class="mock-ui"><div class="mock-bar a"></div><div class="mock-bar"></div><div class="mock-bar s"></div></div>
+        </div>
+        <div class="port-body">
+          <p class="pt">Demo Project</p>
+          <h3>IronEdge Fitness Center</h3>
+          <p>A gym with zero online presence. Walk-ins were slow and people couldn't find class timings or membership prices. The new site added an inquiry form, pricing table, and Google Maps.</p>
+          <span class="ptag">Problem solved: No online visibility</span>
+        </div>
+      </div>
+      <div class="port-card">
+        <div class="port-thumb coach">
+          <span class="mock-lbl">Coaching Center</span>
+          <div class="mock-ui"><div class="mock-bar a"></div><div class="mock-bar"></div><div class="mock-bar s"></div></div>
+        </div>
+        <div class="port-body">
+          <p class="pt">Demo Project</p>
+          <h3>Apex IIT Coaching</h3>
+          <p>A coaching institute losing leads to competitors with slicker websites. Built a results-showcasing site with batch details, faculty profiles, and a WhatsApp inquiry button.</p>
+          <span class="ptag">Problem solved: Losing leads to competition</span>
+        </div>
+      </div>
+      <div class="port-card">
+        <div class="port-thumb salon">
+          <span class="mock-lbl">Salon / Beauty</span>
+          <div class="mock-ui"><div class="mock-bar a"></div><div class="mock-bar"></div><div class="mock-bar s"></div></div>
+        </div>
+        <div class="port-body">
+          <p class="pt">Demo Project</p>
+          <h3>Luxe Studio Salon</h3>
+          <p>A popular salon relying only on word-of-mouth. The new site featured a services menu, photo gallery, and online booking — making it easy for new customers to find and trust them.</p>
+          <span class="ptag">Problem solved: Hard to find new customers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <span class="tag">Simple Pricing</span>
+    <h2 class="section-title">Pick What Your<br/>Business Needs</h2>
+    <p class="section-sub">No locked contracts. No hidden fees. Just a website that works and a price that makes sense.</p>
+    <div class="price-grid fi">
+      <div class="price-card">
+        <p class="plan-name">Starter</p>
+        <div class="plan-price"><span class="from">Starting at</span><br/>₹3,999</div>
+        <p class="plan-desc">A clean, professional website for businesses that just need a strong online presence.</p>
+        <ul class="plan-feats">
+          <li>3–5 page website</li>
+          <li>Mobile responsive design</li>
+          <li>Contact form + WhatsApp button</li>
+          <li>Google Maps integration</li>
+          <li>Delivered in 5–7 days</li>
+        </ul>
+        <a href="#contact" class="btn-primary">Get Started</a>
+      </div>
+      <div class="price-card pop">
+        <p class="plan-name">Growth</p>
+        <div class="plan-price"><span class="from">Starting at</span><br/>₹7,499</div>
+        <p class="plan-desc">For businesses ready to show up on Google and stand out from the competition.</p>
+        <ul class="plan-feats">
+          <li>Everything in Starter</li>
+          <li>On-page SEO setup</li>
+          <li>Speed optimization</li>
+          <li>Blog or news section</li>
+          <li>Google Business integration</li>
+          <li>1 month free support</li>
+        </ul>
+        <a href="#contact" class="btn-primary">Get Started</a>
+      </div>
+      <div class="price-card">
+        <p class="plan-name">Custom</p>
+        <div class="plan-price"><span class="from">Starting at</span><br/>₹12,999</div>
+        <p class="plan-desc">Online store, appointment booking, or a fully custom solution — let's build it.</p>
+        <ul class="plan-feats">
+          <li>E-commerce or booking system</li>
+          <li>Payment gateway integration</li>
+          <li>Admin dashboard</li>
+          <li>Custom features as needed</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="#contact" class="btn-primary">Discuss Project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <span class="tag">How It Works</span>
+    <h2 class="section-title">From First Message<br/>to Live Website</h2>
+    <p class="section-sub">Simple, straightforward, and no surprises. Here's exactly what working with me looks like.</p>
+    <div class="steps fi">
+      <div class="step"><div class="step-dot">01</div><div><h3>We Talk About Your Business</h3><p>You tell me about your business, your customers, and what you want the website to do. No forms, no calls — just a simple WhatsApp or email chat.</p></div></div>
+      <div class="step"><div class="step-dot">02</div><div><h3>I Show You the Design</h3><p>I'll send over a design concept for you to review. If something doesn't look right — we fix it before writing a single line of code.</p></div></div>
+      <div class="step"><div class="step-dot">03</div><div><h3>I Build It</h3><p>Once the design is approved, I build the full website. You'll get a preview link to check everything on your phone and desktop before it goes live.</p></div></div>
+      <div class="step"><div class="step-dot">04</div><div><h3>Your Site Goes Live</h3><p>I handle the hosting setup and deployment. Your business is officially online. I'll also help you verify it on Google Business if needed.</p></div></div>
+      <div class="step" style="padding-bottom:0"><div class="step-dot">05</div><div><h3>Ongoing Support</h3><p>Need to update your offers, add a photo, or change a phone number? Just message me. I'm not disappearing after launch.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <span class="tag">FAQ</span>
+    <h2 class="section-title">Questions You<br/>Probably Have</h2>
+    <p class="section-sub">Honest answers to the things most business owners ask before getting started.</p>
+    <div class="faq-list fi">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does it take to build my website? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Most websites are ready in 5–10 days. A simple 3–5 page site takes around 5 days. Larger projects with booking systems or e-commerce may take 10–14 days. I'll give you a clear timeline before we start.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do I need to pay for hosting separately? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes — hosting is a small annual cost (typically ₹1,500–₹4,000/year). I'll help you choose the right plan, set everything up, and explain exactly what you're paying for. No upselling from my end.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can I update my website after it's built? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Absolutely. Small updates — changing a phone number, updating prices, adding photos — I'll do free for the first month. After that, updates are available at a small fee depending on what's needed.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will my website show up on Google? <span class="faq-icon">+</span></button>
+        <div class="faq-a">All websites I build are SEO-ready — structured so Google can find and index them. With the Growth plan, I also set up on-page SEO so you rank better for local searches like "gym in [your city]." Getting to the top takes time, but you'll be set up the right way from day one.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">I'm not technical at all. Is that okay? <span class="faq-icon">+</span></button>
+        <div class="faq-a">That's completely fine — most of my clients aren't. You don't need to understand code or design. I handle everything technical and explain what matters in plain language. Just tell me about your business and review what I build.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What do I need to provide to get started? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Just the basics: your business name, what you do, your contact details, and any photos or content you have. I'll guide you step by step if you're missing anything. You don't need to have it all figured out before reaching out.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="contact-left fi">
+        <span class="tag">Let's Talk</span>
+        <h2>Ready to Get<br/>Your Website?</h2>
+        <p>Tell me a little about your business and what you're looking for. I'll get back to you within a few hours — usually same day.</p>
+        <div class="c-opt">
+          <div class="c-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></div>
+          <div><strong style="color:var(--text);font-size:0.9rem">WhatsApp (Fastest)</strong><br/><a href="https://wa.me/918882156164" target="_blank" style="color:var(--accent);font-size:0.88rem">+91 8882156164</a></div>
+        </div>
+        <div class="c-opt">
+          <div class="c-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><strong style="color:var(--text);font-size:0.9rem">Email</strong><br/><a href="mailto:swiftcrispwebworks@gmail.com" style="color:var(--accent);font-size:0.88rem">swiftcrispwebworks@gmail.com</a></div>
+        </div>
+        <div style="margin-top:28px">
+          <a href="https://wa.me/918882156164?text=Hi%2C%20I%20want%20a%20website%20for%20my%20business" target="_blank" class="btn-wa">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Message on WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="c-form fi">
+        <h3>Send Me a Message</h3>
+        <div class="fg"><label>Your Name</label><input type="text" id="f-name" placeholder="Enter your name" /></div>
+        <div class="fg"><label>WhatsApp Number</label><input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX" /></div>
+        <div class="fg"><label>Type of Business</label>
+          <select id="f-btype">
+            <option value="">Select your business type</option>
+            <option>Gym / Fitness Center</option>
+            <option>Coaching / Tuition Center</option>
+            <option>Salon / Parlour</option>
+            <option>Restaurant / Cafe</option>
+            <option>Retail / Product Shop</option>
+            <option>Other Local Business</option>
+          </select>
+        </div>
+        <div class="fg"><label>Package You're Interested In</label>
+          <select id="f-plan">
+            <option value="">Not sure yet</option>
+            <option>Starter (₹3,999+)</option>
+            <option>Growth (₹7,499+)</option>
+            <option>Custom / E-commerce (₹12,999+)</option>
+          </select>
+        </div>
+        <div class="fg"><label>Tell me about your business</label><textarea id="f-msg" placeholder="What does your business do? What do you want from your website?"></textarea></div>
+        <button class="btn-primary btn-submit" onclick="handleSubmit()">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Send Message
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">Swift<span>Crisp</span> India</div>
+    <p style="margin-bottom:8px">Affordable websites for small businesses across India.</p>
+    <p>© 2025 SwiftCrisp India &nbsp;·&nbsp; <a href="mailto:swiftcrispwebworks@gmail.com">swiftcrispwebworks@gmail.com</a></p>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/918882156164?text=Hi%2C%20I%20want%20a%20website%20for%20my%20business" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+  // Scroll navbar shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  // Hamburger
+  const hb = document.getElementById('hamburger');
+  const mm = document.getElementById('mobileMenu');
+  hb.addEventListener('click', () => { hb.classList.toggle('open'); mm.classList.toggle('open'); });
+  function closeMobile() { hb.classList.remove('open'); mm.classList.remove('open'); }
+
+  // FAQ
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Scroll fade-in
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+  // Form submit — redirects to WhatsApp (replace with Flask fetch('/contact') in production)
+  function handleSubmit() {
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const btype = document.getElementById('f-btype').value;
+    const plan = document.getElementById('f-plan').value;
+    const msg = document.getElementById('f-msg').value.trim();
+    if (!name || !phone) { alert('Please enter your name and WhatsApp number.'); return; }
+    const text = encodeURIComponent(`Hi, I'm ${name} (${phone}).\nBusiness: ${btype || 'Not specified'}\nPackage: ${plan || 'Not sure yet'}\n\n${msg}`);
+    window.open(`https://wa.me/918882156164?text=${text}`, '_blank');
+  }
+</script>
+</body>
+</html>
